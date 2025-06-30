@@ -34,14 +34,14 @@ export class RestaurantController {
 
     @UseGuards(RemoteAuthGuard)
     @Permissions(['restaurant_edit'])
-    @Put(':id')
+    @Put('edit/:id')
     updateRestaurant(@Param('id') id: number, @Body() restaurant: RestaurantInput) {
         return this.restaurantService.updateRestaurant(id, restaurant);
     }
 
     @UseGuards(RemoteAuthGuard)
     @Permissions(['restaurant_edit'])
-    @Patch(':id')
+    @Patch('edit/:id')
     partialUpdateRestaurant(@Param('id') id: number, @Body() restaurant: Partial<RestaurantInput>) {
         return this.restaurantService.partialUpdateRestaurant(id, restaurant);
     }
