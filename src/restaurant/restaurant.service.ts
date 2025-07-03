@@ -103,6 +103,9 @@ export class RestaurantService {
         },
         skip,
         take: quantity,
+        order: {
+            id: 'ASC',
+        },
     });
     // tambien puede ser relations: ['address', 'address.cityId', 'address.location']
         return constRestaurants.map((restaurant) => ({
